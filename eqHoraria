@@ -1,0 +1,312 @@
+/*
+Calcular a Equacao Horaria
+Criado por: Hiran
+Em: 29/05/2023
+*/
+import java.util.Scanner;
+public class App {
+        public static void main(String[] args) throws Exception {
+        int escolha, escolha2, t, v;
+        float s, s0, deslc, res, tDec;
+        Scanner tec = new Scanner(System.in);
+
+        System.out.print("\n---Equacao Horaria--- \nO que voce quer calcular? \n1 - Posicao Final \n2 - Posicao Inicial \n3 - Velocidade \n4 - Tempo \nEscolha:");
+        escolha = tec.nextInt();
+
+        switch(escolha) {
+            case 1:
+                System.out.print("\nComo voce quer calcular a equacao horaria? \n1 - Em Metros \n2 - Em Quilometros \nEscolha:");
+                escolha = tec.nextInt();
+
+                switch(escolha) {
+                    case 1:
+                        System.out.print("\nPara calcularmos a posicao final precisamos da formula da equacao horaria, que eh S = S0 + V x T. \nPara te ajudarmos a calcular a posicao final de um objeto, nos forneca os seguintes valores... \nA posicao inicial do objeto(em metros):");
+                        s0 = tec.nextFloat();
+
+                        System.out.print("\nA velocidade do objeto(em m/s):");
+                        v = tec.nextInt();
+                        
+                        System.out.print("\nO tempo de percurso do objeto(em Segundos):");
+                        t = tec.nextInt();
+
+                        System.out.printf("\nA posicao final do objeto eh: %.1f m", s0 + v * t);
+                    break;
+                    case 2:
+                        System.out.print("\nPara calcularmos a posicao final precisamos da fromula da equacao horaria, que eh S = S0 + V x T. \nPara te ajudarmos a calcular a posicao final de um objeto, nos forneca os seguintes valores... \nA posicao inicial do objeto(em km):");
+                        s0 = tec.nextFloat();
+
+                        System.out.print("\nA velocidade do objeto(em km/h):");
+                        v = tec.nextInt();
+                        
+                        System.out.print("\nO tempo de percurso do objeto(em horas ou em forma decimal Ex: 15 min = 0,25 horas):");
+                        tDec = tec.nextInt();
+
+                        res = s0 + v * tDec;
+
+                        System.out.printf("\nA posicao final do objeto eh: %.1f km", res);
+                    break;
+                    default:
+                        System.out.print("\n!---Insira o valor correto---!");
+                    break;
+                }
+            break;
+            case 2:
+                System.out.print("\nComo voce quer calcular a equacao horaria? \n1 - Em Metros \n2 - Em Quilometros \nEscolha:");
+                escolha = tec.nextInt();
+
+                switch(escolha) {
+                    case 1:
+                        System.out.print("\nPara calcularmos a posicao inicial precisamos da formula da equacao horaria, que eh S = S0 + V x T. \nPara te ajudarmos a calcular a posicao inicial de um objeto, nos forneca os seguintes valores... \nA posicao final do objeto(em metros):");
+                        s = tec.nextFloat();
+
+                        System.out.print("\nA velocidade que o objeto(em m/s):");
+                        v = tec.nextInt();
+                        
+                        System.out.print("\nO tempo de percurso do objeto(em segundos):");
+                        t = tec.nextInt();
+
+                        if(v*t <= s){
+                            System.out.printf("\nA posicao inicial do objeto eh: %.1f m", s - v * t);
+                        }else {
+                            System.out.print("\n!---Insira o valor correto---!");
+                        }
+                    break;
+                    case 2:
+                        System.out.print("\nPara calcularmos a posicao inicial precisamos da formula da equacao horaria, que eh S = S0 + V x T. \nPara te ajudarmos a calcular a posicao final de um objeto, nos forneca os seguintes valores... \nA posicao final do objeto(em km):");
+                        s = tec.nextFloat();
+
+                        System.out.print("\nA velocidade que o objeto(em km/h):");
+                        v = tec.nextInt();
+                        
+                        System.out.print("\nO tempo de percurso do objeto(em horas ou em forma decimal Ex: 15 min = 0,25 horas):");
+                        t = tec.nextInt();
+
+                        if(v*t <= s){
+                            System.out.printf("\nA posicao inicial do objeto eh: %.1f m", s - v * t);
+                        }else {
+                            System.out.print("\n!---Insira o valor correto---!");
+                        }
+                    break;
+                    default:
+                        System.out.print("\n!---Insira o valor correto---!");
+                    break;
+                }
+            break;
+            case 3:
+                System.out.print("\nVoce quer calcular a velocidade em: \n1 - m/s \n2 - km/h \nEscolha:");
+                escolha = tec.nextInt();
+
+                switch(escolha) {
+                    case 1:
+                        System.out.print("\nPara calcularmos a velocidade, usamos a formula V = S/T. A seguir, nos forneca os seguintes valores. \nA distancia percorrida pelo objeto(Em metros):");
+                        s = tec.nextFloat();
+
+                        System.out.print("\nO tempo gasto no percurso(Em segundos):");
+                        t = tec.nextInt();
+
+                        System.out.printf("\nA velocidade do objeto eh: %.1f m/s", s * t);
+                    break;
+                    case 2:
+                        System.out.print("\nPara calcularmos a velocidade, usamos a formula V = S/T. A seguir, nos forneca os seguintes valores. \nA distancia percorrida pelo objeto(Em Quilometros):");
+                        s = tec.nextFloat();
+
+                        System.out.print("\nO tempo gasto no percurso(Em horas ou em forma decimal ex: 15 min = 0,25 horas):");
+                        t = tec.nextInt();
+
+                        System.out.printf("\nA velocidade do objeto eh: %.1f km/h", s * t);
+                    break;
+                    default:
+                        System.out.print("\n!---Entre com o valor correto---!");
+                    break;
+                }
+            break;
+            case 4:
+                System.out.print("\nO tempo vai ser calculado em: \n1 - Segundos \n2 - Horas \nEscolha:");
+                escolha = tec.nextInt();
+
+                switch(escolha) {
+                    case 1:
+                        System.out.print("\nPara calcularmos o tempo, temos apenas que dividir o valor do deslocamento do objeto pela velocidade media do mesmo. \nEntao, entre com os seguintes valores: \nO deslocamento do objeto(Em metros):");
+                        deslc = tec.nextFloat();
+
+                        System.out.print("\nA velocidade do objeto(Em m/s):");
+                        v = tec.nextInt();
+
+                        res = deslc / v;
+
+                        if(res < 1) {
+                            System.out.print("\nO tempo gasto foi menor que 1 segundo");
+                        }else{
+                            System.out.printf("\nO tempo gasto foi de Aproximadamente %d segundos", (int)res);
+                        }
+                    break;
+                    case 2:
+                        System.out.print("\nPara calcularmos o tempo, temos apenas que dividir o valor do deslocamento do objeto pela velocidade media do mesmo. \nEntao, entre com os seguintes valores: \nO deslocamento do objeto(Em quilometros):");
+                        s = tec.nextFloat();
+
+                        System.out.print("\nA velocidade do objeto(Em km/h):");
+                        v = tec.nextInt();
+
+                        System.out.printf("\nO tempo gasto foi de aproximadamente %d horas", (int)s / v);
+                    break;
+                    default:
+                        System.out.print("\n!---Insira o valor correto---!");
+                    break;
+                }
+            break;
+            }
+
+            System.out.print("\n\nContinuar? \n1 - Sim \n2 - Nao \nEscolha:");
+            escolha2 = tec.nextInt();
+
+            while(escolha2 == 1){
+                System.out.print("\n---Equacao Horaria--- \nO que voce quer calcular? \n1 - Posicao Final \n2 - Posicao Inicial \n3 - Velocidade \n4 - Tempo \nEscolha:");
+                escolha = tec.nextInt();
+
+                switch(escolha) {
+                    case 1:
+                        System.out.print("\nComo voce quer calcular a equacao horaria? \n1 - Em Metros \n2 - Em Quilometros \nEscolha:");
+                        escolha = tec.nextInt();
+
+                        switch(escolha) {
+                            case 1:
+                                System.out.print("\nPara calcularmos a posicao final precisamos da formula da equacao horaria, que eh S = S0 + V x T. \nPara te ajudarmos a calcular a posicao final de um objeto, nos forneca os seguintes valores... \nA posicao inicial do objeto(em metros):");
+                                s0 = tec.nextFloat();
+
+                                System.out.print("\nA velocidade do objeto(em m/s):");
+                                v = tec.nextInt();
+                                
+                                System.out.print("\nO tempo de percurso do objeto(em Segundos):");
+                                t = tec.nextInt();
+
+                                System.out.printf("\nA posicao final do objeto eh: %.1f m", s0 + v * t);
+                            break;
+                            case 2:
+                                System.out.print("\nPara calcularmos a posicao final precisamos da fromula da equacao horaria, que eh S = S0 + V x T. \nPara te ajudarmos a calcular a posicao final de um objeto, nos forneca os seguintes valores... \nA posicao inicial do objeto(em km):");
+                                s0 = tec.nextFloat();
+
+                                System.out.print("\nA velocidade do objeto(em km/h):");
+                                v = tec.nextInt();
+                                
+                                System.out.print("\nO tempo de percurso do objeto(em horas ou em forma decimal Ex: 15 min = 0,25 horas):");
+                                t = tec.nextInt();
+
+                                System.out.printf("\nA posicao final do objeto eh: %.1f km", s0 + v * t);
+                            break;
+                            default:
+                                System.out.print("\n!---Insira o valor correto---!");
+                            break;
+                        }
+                    break;
+                    case 2:
+                        System.out.print("\nComo voce quer calcular a equacao horaria? \n1 - Em Metros \n2 - Em Quilometros \nEscolha:");
+                        escolha = tec.nextInt();
+
+                        switch(escolha) {
+                            case 1:
+                                System.out.print("\nPara calcularmos a posicao inicial precisamos da formula da equacao horaria, que eh S = S0 + V x T. \nPara te ajudarmos a calcular a posicao final de um objeto, nos forneca os seguintes valores... \nA posicao final do objeto(em metros):");
+                                s = tec.nextFloat();
+
+                                System.out.print("\nA velocidade que o objeto(em m/s):");
+                                v = tec.nextInt();
+                                
+                                System.out.print("\nO tempo de percurso do objeto(em segundos):");
+                                t = tec.nextInt();
+
+                                if(v*t <= s){
+                                    System.out.printf("\nA posicao inicial do objeto eh: %.1f m", s - v * t);
+                                }else {
+                                    System.out.print("\n!---Insira o valor correto---!");
+                                }
+                            break;
+                            case 2:
+                                System.out.print("\nPara calcularmos a posicao inicial precisamos da formula da equacao horaria, que eh S = S0 + V x T. \nPara te ajudarmos a calcular a posicao final de um objeto, nos forneca os seguintes valores... \nA posicao final do objeto(em km):");
+                                s = tec.nextFloat();
+
+                                System.out.print("\nA velocidade que o objeto(em km/h):");
+                                v = tec.nextInt();
+                                
+                                System.out.print("\nO tempo de percurso do objeto(em horas ou em forma decimal Ex: 15 min = 0,25 horas):");
+                                t = tec.nextInt();
+
+                                if(v*t <= s){
+                                    System.out.printf("\nA posicao inicial do objeto eh: %.1f m", s - v * t);
+                                }else {
+                                    System.out.print("\n!---Insira o valor correto---!");
+                                }
+                            break;
+                            default:
+                                System.out.print("\n!---Insira o valor correto---!");
+                            break;
+                        }
+                    break;
+                    case 3:
+                        System.out.print("\nVoce quer calcular a velocidade em: \n1 - m/s \n2 - km/h \nEscolha:");
+                        escolha = tec.nextInt();
+
+                        switch(escolha) {
+                            case 1:
+                                System.out.print("\nPara calcularmos a velocidade, usamos a formula V = S/T. A seguir, nos forneca os seguintes valores. \nA distancia percorrida pelo objeto(Em metros):");
+                                s = tec.nextFloat();
+
+                                System.out.print("\nO tempo gasto no percurso(Em segundos):");
+                                t = tec.nextInt();
+
+                                System.out.printf("\nA velocidade do objeto eh: %.1f m/s", s * t);
+                            break;
+                            case 2:
+                                System.out.print("\nPara calcularmos a velocidade, usamos a formula V = S/T. A seguir, nos forneca os seguintes valores. \nA distancia percorrida pelo objeto(Em Quilometros):");
+                                s = tec.nextFloat();
+
+                                System.out.print("\nO tempo gasto no percurso(Em horas ou em forma decimal ex: 15 min = 0,25 horas):");
+                                t = tec.nextInt();
+
+                                System.out.printf("\nA velocidade do objeto eh: %.1f km/h", s * t);
+                            break;
+                            default:
+                                System.out.print("!---Entre com o valor correto---!");
+                            break;
+                        }
+                    break;
+                    case 4:
+                        System.out.print("\nO tempo vai ser calculado em: \n1 - Segundos \n2 - Horas \nEscolha:");
+                        escolha = tec.nextInt();
+
+                        switch(escolha) {
+                            case 1:
+                                System.out.print("\nPara calcularmos o tempo, temos apenas que dividir o valor do deslocamento do objeto pela velocidade media do mesmo. \nEntao, entre com os seguintes valores: \nO deslocamento do objeto(Em metros):");
+                                deslc = tec.nextFloat();
+
+                                System.out.print("\nA velocidade do objeto(Em m/s):");
+                                v = tec.nextInt();
+                                
+                                res = deslc / v;
+
+
+                                if(res < 1) {
+                                    System.out.print("\nO tempo gasto foi menor que 1 segundo");
+                                }else{
+                                    System.out.printf("\nO tempo gasto foi de aproximadamente %d segundos", (int)res);
+                                }
+                            break;
+                            case 2:
+                                System.out.print("Para calcularmos o tempo, temos apenas que dividir o valor do deslocamento do objeto pela velocidade media do mesmo. \nEntao, entre com os seguintes valores: \nO deslocamento do objeto(Em quilometros):");
+                                s = tec.nextFloat();
+
+                                System.out.print("\nA velocidade do objeto(Em km/h):");
+                                v = tec.nextInt();
+
+                                System.out.printf("\nO tempo gasto foi de aproximadamente %.1f horas", (float)s / v);
+                            break;
+                            default:
+
+                            break;
+                        }
+                    break;
+                }
+            System.out.print("\n\nContinuar? \n1 - Sim \n2 - Nao \nEscolha:");
+            escolha2 = tec.nextInt();
+        }
+        tec.close();
+    }
+}
